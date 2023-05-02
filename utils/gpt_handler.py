@@ -34,6 +34,6 @@ class GPT3interface:
 
     @staticmethod
     @reconnect_decorator.reconnect
-    def response_from_gpt(query: str) -> str:
+    async def response_from_gpt(query: str) -> str:
         index = GPTSimpleVectorIndex.load_from_disk(config.PROMPT_INDEX_PATH)
         return index.query(query, response_mode='compact').response
