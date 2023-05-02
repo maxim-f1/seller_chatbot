@@ -2,4 +2,6 @@ from aiogram import types
 from dispatcher import dp
 
 
-# User actions in a group goes here ...
+@dp.message_handler()
+async def echo(message: types.Message):
+    await message.answer(message.text)
