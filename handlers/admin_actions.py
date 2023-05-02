@@ -1,5 +1,5 @@
 from aiogram import types
-from dispatcher import dp
+from dispatcher import DP
 
 
 # Admin actions in a group goes here ...

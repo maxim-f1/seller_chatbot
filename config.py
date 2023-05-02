@@ -1,8 +1,15 @@
 from dotenv import load_dotenv
-import os
+from os import path, environ, getenv
 
-# Find .env file with os variables
+
 load_dotenv("dev.env")
 
-# retrieve config variables
-BOT_TOKEN = os.getenv('BOT_TOKEN')
+BOT_TOKEN = getenv('BOT_TOKEN')
+
+OPENAI_API = environ.get('OpenAI_API')
+
+SCRIPT_PATH = path.dirname(path.realpath(__file__)).split(sep='\\')
+
+PROMPT_DATA_PATH = '\\'.join(SCRIPT_PATH + ['prompt\\data'])
+
+PROMPT_INDEX_PATH = '\\'.join(SCRIPT_PATH + ['prompt\\index.json'])
