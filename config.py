@@ -1,12 +1,10 @@
 from dotenv import load_dotenv
-from os import path, environ, getenv
+from os import path, getenv
 
 
 load_dotenv("dev.env")
 
 BOT_TOKEN = getenv('BOT_TOKEN')
-
-OPENAI_API = environ.get('OpenAI_API')
 
 SCRIPT_PATH = path.dirname(path.realpath(__file__)).split(sep='\\')
 

@@ -3,8 +3,6 @@ import os
 import config
 from utils import reconnect_decorator
 
-import openai
-
 from gpt_index import LLMPredictor, PromptHelper, SimpleDirectoryReader, ServiceContext, GPTSimpleVectorIndex
 from langchain import OpenAI
 
@@ -18,9 +16,6 @@ class GPT3interface:
         return GPT3interface.__instance[cls]
 
     def __init__(self):
-        if not config.OPENAI_API:
-            exit('OPENAI_API no token provided')
-        openai.api_key = config.OPENAI_API
         self.construct_index()
 
     @staticmethod

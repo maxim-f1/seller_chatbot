@@ -1,5 +1,6 @@
 from aiogram import executor
 from dispatcher import DP
+import tg_handlers
 
 
 if __name__ == "__main__":
